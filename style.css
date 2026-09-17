@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: rgba(0, 0, 0, 0);
+    color: #f0f0f0;
+    -webkit-font-smoothing: antialiased;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 1);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    padding: 12px 1.5%;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.extras {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.extras img {
+    width: 120px;
+    height: auto;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    filter: brightness(0) invert(1);
+    transition: transform 0.4s;
+}
+
+.extras:hover img {
+    transform: scale(1.08);
+}
+
+.extras a {
+    font-weight: 900;
+    font-size: 26px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: #ffffff;
+    transition: opacity 0.3s ease;
+}
+
+.extras:hover a {
+    opacity: 0.7;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-links a {
+    position: relative;
+    color: #a0a0a0;
+    text-decoration: none;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 2px;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+.nav-links a.here {
+    color: #ffffff;
+    font-weight: 800;
+}
+
+.nav-links a.here::after {
+    width: 100%;
+    background: #ffffff;
+}
